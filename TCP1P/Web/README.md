@@ -13,7 +13,7 @@
 #### Author : Arkoov (https://github.com/ArkynGenics)
 ### Steps:
 
-1. Open the ip provided `http://ctf.tcp1p.com:58161/`
+1. Open the ip provided `http://ctf.tcp1p.com:16544/`
 2. The challenge's description hints about cookies which we can view using browser inspector.
 3. There are two cookies in the website which is `isAdmin` and `session`. isAdmin might be used as an identifier to wether a user is an admin or not.
 4. By changing the value to 1 we are able to get the flag in the elements like the previous challenge.
@@ -43,6 +43,22 @@
 # 4. PHP Unserialize
 #### Author : Arkoov (https://github.com/ArkynGenics)
 ### Steps:
+
+1. Open the ip provided `http://ctf.tcp1p.com:32116/`
+2. The page displays a php code of a flag class and a get request handler. inside the request handler we see that parameter a is being unserialized and checked if the value of isflag inside a is true, if its true then the page returns the flag.
+3. From that we can copy the flag class and create a serialized string out of it and changing the properties isflag to true.
+4. Next, we can request with parameter a as the serialized string `O:4:"Flag":1:{s:6:"isflag";b:1;}`
+5. After that, the page returns the flag.
+
+![image](https://user-images.githubusercontent.com/86551419/215085877-a155eed2-8e64-4b17-92a2-0b95e87a1574.png)
+
+![image](https://user-images.githubusercontent.com/86551419/215085938-b6a094e0-6ef4-4a4e-b338-b67d3bd75709.png)
+
+![image](https://user-images.githubusercontent.com/86551419/215086006-030a2d02-7b1f-4a1d-ad05-b2c7d6afe7a5.png)
+
+
+
+
 
 
 
