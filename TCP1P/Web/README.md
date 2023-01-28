@@ -56,6 +56,20 @@
 
 ![image](https://user-images.githubusercontent.com/86551419/215086006-030a2d02-7b1f-4a1d-ad05-b2c7d6afe7a5.png)
 
+---
+# 4. PHP Unserialize
+#### Author : Arkoov (https://github.com/ArkynGenics)
+### Steps:
+1. The challenge provide an ip to the web and a source code for the web
+2. Inside the website there is a registration page and home page. In the source code there are a few things that is quite interesting to see. There are routes to admin which means there's admin privilege. inside the route page is where the flag resides. so we need to find a way to access the route `/admin`. 
+![image](https://user-images.githubusercontent.com/86551419/215253641-5f5f0bb5-5399-40d5-8d7c-992de579ab30.png)
+3. The admin route checks if the state session of user's isAdmin is `true or 1`
+4. We then need to see where the state.session is populated with data. inside `register.ts` on line 9 the value of user is assigned directly to the body.value which can be exploited.
+![image](https://user-images.githubusercontent.com/86551419/215253790-531041c9-9809-4e73-bea1-85986b7e6cab.png)
+5. Using tools like burpsuite we can capture registration post request and change the json body's value by adding `"isAdmin":1`
+![image](https://user-images.githubusercontent.com/86551419/215253971-8e54d503-9352-4542-b7eb-eaaab9af32b5.png)
+6. After sending the request we are redirected to the home page. on the navbar menu there is an admin button which redirects us to `/admin`. This is proof that we already have admin privilege.
+
 
 
 
