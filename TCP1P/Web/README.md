@@ -57,7 +57,7 @@
 ![image](https://user-images.githubusercontent.com/86551419/215086006-030a2d02-7b1f-4a1d-ad05-b2c7d6afe7a5.png)
 
 ---
-# 4. PHP Unserialize
+# 4. Property
 #### Author : Arkoov (https://github.com/ArkynGenics)
 ### Steps:
 1. The challenge provide an ip to the web and a source code for the web
@@ -69,8 +69,9 @@
 5. Using tools like burpsuite we can capture registration post request and change the json body's value by adding `"isAdmin":1`
 ![image](https://user-images.githubusercontent.com/86551419/215253971-8e54d503-9352-4542-b7eb-eaaab9af32b5.png)
 6. After sending the request we are redirected to the home page. on the navbar menu there is an admin button which redirects us to `/admin`. This is proof that we already have admin privilege.
-
-
+![image](https://user-images.githubusercontent.com/86551419/215254093-9f293664-e2c3-4733-99b2-4f9a8b85ac73.png)
+7. accessing `/admin` route gives us the flag
+![image](https://user-images.githubusercontent.com/86551419/215254111-4d0465be-0199-4105-8cc8-da79e6d3b484.png)
 
 
 
